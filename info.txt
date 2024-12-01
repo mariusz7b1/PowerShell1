@@ -1,16 +1,15 @@
 Udostępnione Materiały i pliki
-https://drive.google.com/drive/folders/1Pror3h02r45ip0JhiIYy1d22kWYdSPCI?usp=sharing
-https://bit.ly/45tGLU8
+https://github.com/mariusz7b1/PowerShell1
 
 
 Materiały Microsoft
 PL
 https://learn.microsoft.com/pl-pl/training/courses/az-040t00?WT.mc_id=ilt_partner_webpage_wwl&ocid=991060#study-guide
+
 US
 https://learn.microsoft.com/en-us/training/courses/az-040t00?WT.mc_id=ilt_partner_webpage_wwl&ocid=991060#study-guide
 
 https://learn.microsoft.com/en-us/training/paths/powershell/?source=recommendations
-https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.3
 
 
 Virtual Box
