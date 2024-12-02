@@ -11,10 +11,6 @@ Get-help Get-ChildItem -ShowWindow
 Get_help  *process
 Get-Help *process*
 
-# Help ABOUT
-Get-Help about*
-Get-Help about_aliases
-Get-Help about_eventlogs -ShowWindow
 
 #Finding (Get-command)
 Get-Command *net*
