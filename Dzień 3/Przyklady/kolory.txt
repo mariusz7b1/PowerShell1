@@ -1,0 +1,1 @@
+$kolory = [System.Enum]::GetValues([System.ConsoleColor])
