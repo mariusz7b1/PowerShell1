@@ -1,40 +1,41 @@
-﻿# Wersja  bez zastosowania zmiennych 
-
+﻿
 # 1 ilosc
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | Measure-Object 
+$users=Get-ADUser -Filter {name -like 'e*' -or name -like 's*'} -SearchBase "ou=marketing,dc=adatum,dc=com" 
+$users | Measure-Object 
 
 #2 Formatownie
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | FT -Property name,DistinguishedName
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | Select-Object -Property name,DistinguishedName |FT
+$users | FT -Property name,DistinguishedName
+$users | Select-Object -Property name,DistinguishedName |FT
 
 #3 zapisanie do pliku
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | Select-Object -Property name,DistinguishedName | Out-File d:\user2.txt -Encoding utf8
+$users | Select-Object -Property name,DistinguishedName | Out-File e:\user2.txt
 
 #4 zmiana wlasciwosci
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | Set-ADUser -City "Opole"
+$users | Set-ADUser -City "Opole" 
 
 #5 zmiana wlasciowosci
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | Set-ADUser -Department "Utajniony"
+$users | Set-ADUser -Department "Utajniony" 
 
 # spr 4,5
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'}   -Properties City, Department | FT -Property name,city,department
+Get-ADUser -Filter {name -like 'e*' -or name -like 's*'} -SearchBase "ou=marketing,dc=adatum,dc=com"  -Properties City, Department
 
 #6  nowa OU
-New-ADOrganizationalUnit -Name "TESTERZY" -Path "OU=KejaMain,DC=keja,DC=msft" 
+New-ADOrganizationalUnit -Name "TESTERZY" -Path "dc=adatum,dc=com" 
 
 #7 Nowa Grupa
-New-ADGroup -Name "TESTERZY" -Path "ou=testerzy,OU=KejaMain,DC=keja,DC=msft"  -GroupCategory Security -GroupScope Global
+New-ADGroup -Name "TESTERZY" -Path "ou=testerzy,dc=adatum,dc=com"  -GroupCategory Security -GroupScope Global
 
 #8 Przeniesienie do innego OU
-Get-ADUser -Filter {name -like 'c*' -or name -like 'r*'} | Move-ADObject -TargetPath "ou=testerzy,OU=KejaMain,DC=keja,DC=msft" 
+$users | Move-ADObject -TargetPath "ou=testerzy,dc=adatum,dc=com"  
 
 #9
-Add-ADGroupMember -Identity "TESTERZY" -Members (Get-ADUser -Filter * -SearchBase "ou=testerzy,OU=KejaMain,DC=keja,DC=msft" )
-
-# spr
-Get-ADUser -Filter * -SearchBase "ou=testerzy,OU=KejaMain,DC=keja,DC=msft" | Get-ADPrincipalGroupMembership | FT
+Add-ADGroupMember -Identity "TESTERZY" -Members (Get-ADUser -Filter * -SearchBase "ou=testerzy,dc=adatum,dc=com" )
 
 #10
-Get-ADUser -Filter * -SearchBase "ou=testerzy,OU=KejaMain,DC=keja,DC=msft" | Set-ADUser -PasswordNeverExpires:$false 
+Remove-ADGroupMember -Identity "marketing" -Members (Get-ADUser -Filter * -SearchBase "ou=testerzy,dc=adatum,dc=com" ) -Confirm:$false
 
+# spr 9, 10
+Get-ADUser -Filter * -SearchBase "ou=testerzy,dc=adatum,dc=com" | Get-ADPrincipalGroupMembership 
 
+#11
+Get-ADUser -Filter * -SearchBase "ou=testerzy,dc=adatum,dc=com" | Set-ADUser -PasswordNeverExpires:$false
