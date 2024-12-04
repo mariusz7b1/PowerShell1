@@ -7,7 +7,7 @@ $tekst=Get-Content -LiteralPath "D:\dane\testowy.txt" -Tail 3 -Encoding utf8
 
 Set-Content -LiteralPath "D:\dane\wynik.txt" -Value $tekst
 
-$tekst | Set-Content -LiteralPath "D:\dane\wynik.txt"  -append
+$tekst | Set-Content -LiteralPath "D:\dane\wynik.txt"  
 
 
 
