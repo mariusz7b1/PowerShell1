@@ -1,6 +1,6 @@
 ﻿
 # 1 ilosc
-$users=Get-ADUser -Filter {name -like 'e*' -or name -like 's*'} -SearchBase "ou=marketing,dc=adatum,dc=com" 
+$users=Get-ADUser -Filter {name -like 'e*' -or name -like 's*'} -SearchBase "ou=marketing,ou=users,ou=kejamain,dc=adatum,dc=com" 
 $users | Measure-Object 
 
 #2 Formatownie
