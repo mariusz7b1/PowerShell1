@@ -1,7 +1,5 @@
 ﻿$tekst=Get-Content -LiteralPath "D:\dane\testowy.txt"  -Encoding utf8
 
-# $tekst=Get-Content -LiteralPath "D:\dane\testowy.txt"  -Encoding utf8 -raw
-
 $tekst=Get-Content -LiteralPath "D:\dane\testowy.txt" -TotalCount 3 -Encoding utf8
 
 $tekst=Get-Content -LiteralPath "D:\dane\testowy.txt" -Tail 3 -Encoding utf8
@@ -9,7 +7,7 @@ $tekst=Get-Content -LiteralPath "D:\dane\testowy.txt" -Tail 3 -Encoding utf8
 
 Set-Content -LiteralPath "D:\dane\wynik.txt" -Value $tekst
 
-$tekst | Set-Content -LiteralPath "D:\dane\wynik.txt" 
+$tekst | Set-Content -LiteralPath "D:\dane\wynik.txt"  -append
 
 
 
