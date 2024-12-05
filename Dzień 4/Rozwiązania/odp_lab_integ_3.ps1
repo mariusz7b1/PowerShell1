@@ -101,7 +101,7 @@ function Convert-CustomData
 }
 
 Clear-Host
-if (Convert-CustomData "D:\dane\dane1K.txt " -eq $true)
+if (Convert-CustomData "c:\dane\dane1K.txt " -eq $true)
 {
     Write-Host "Poszło super :)" -BackgroundColor Green -ForegroundColor DarkBlue
 }

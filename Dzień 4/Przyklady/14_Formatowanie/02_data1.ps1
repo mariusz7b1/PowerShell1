@@ -18,27 +18,27 @@ $diff.TotalSeconds
 
 
 
-Wyświetlanie pełnej daty i czasu:
+#Wyświetlanie pełnej daty i czasu:
 Get-Date -UFormat "%c"
 
-Wyświetlanie daty w formacie YYYY-MM-DD:
+#Wyświetlanie daty w formacie YYYY-MM-DD:
 Get-Date -UFormat "%Y-%m-%d"
 
-Wyświetlanie czasu w formacie HH:MM:SS:
+#Wyświetlanie czasu w formacie HH:MM:SS:
 Get-Date -UFormat "%T"
 
-Wyświetlanie dnia tygodnia:
+#Wyświetlanie dnia tygodnia:
 Get-Date -UFormat "%A"
 
 
-Wyświetlanie skróconego dnia tygodnia:
+#Wyświetlanie skróconego dnia tygodnia:
 Get-Date -UFormat "%a"
 
-Wyświetlanie dnia roku (od 1 do 366):
+#Wyświetlanie dnia roku (od 1 do 366):
 Get-Date -UFormat "%j"
 
 
-Wyświetlanie pełnej daty, czasu i strefy czasowej:
+#Wyświetlanie pełnej daty, czasu i strefy czasowej:
 Get-Date -UFormat "%F %T %Z"
 
 
