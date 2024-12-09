@@ -1,2 +1,0 @@
-Lista  5a zadanie 2
-$kolory = [System.Enum]::GetValues([System.ConsoleColor])
